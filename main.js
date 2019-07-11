@@ -2,11 +2,6 @@ var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
 
 var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
 var mapOption = {
-    // func: navigator.geolocation.getCurrentPosition(function (pos) {
-    //     var latitude = pos.coords.latitude;
-    //     var longitude = pos.coords.longitude;
-    //     //alert("현재 위치는 : " + latitude + ", " + longitude);
-    // }),
     center: new kakao.maps.LatLng(37.502976, 127.05464319999999), // 지도의 중심좌표
     level: 3 // 지도의 확대 레벨
 };
