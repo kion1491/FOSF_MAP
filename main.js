@@ -1,50 +1,5 @@
 var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
 
-// navigator.geolocation.getCurrentPosition(function (position) {
-
-//     var latitude = position.coords.latitude;
-//     var longitude = position.coords.longitude;
-
-//     return latitude, longitude;
-// })
-
-function test() {
-    var apple = "사과";
-    var pear = "배";
-    var arr = [apple, pear]
-    return arr
-}
-
-function deep() {
-    return test();
-}
-
-console.log(deep())
-
-function getLocation() {
-    if (navigator.geolocation) { // GPS를 지원하면
-        navigator.geolocation.getCurrentPosition(function (position) {
-
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-
-            return latitude, longitude;
-        }, function (error) {
-            console.error(error);
-        }, {
-                enableHighAccuracy: false,
-                maximumAge: 0,
-                timeout: Infinity
-            });
-    } else {
-        alert('GPS를 지원하지 않습니다');
-    }
-    console.log()
-}
-
-getLocation();
-
-
 var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
 var mapOption = {
     // func: navigator.geolocation.getCurrentPosition(function (pos) {
@@ -52,7 +7,7 @@ var mapOption = {
     //     var longitude = pos.coords.longitude;
     //     //alert("현재 위치는 : " + latitude + ", " + longitude);
     // }),
-    //center: new kakao.maps.LatLng(37.502976, 127.05464319999999), // 지도의 중심좌표
+    center: new kakao.maps.LatLng(37.502976, 127.05464319999999), // 지도의 중심좌표
     level: 3 // 지도의 확대 레벨
 };
 
@@ -63,8 +18,6 @@ navigator.geolocation.getCurrentPosition((position) => {
 
     return mapOption.center = positionArray
 })
-console.log(mapOption)
-//37.502976, 127.05464319999999
 
 
 // 지도를 생성합니다    
