@@ -4,7 +4,7 @@ navigator.geolocation.getCurrentPosition((position) => {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
     var positionArray = [latitude, longitude]
-    var searchKeyword = "부천 고강동 동물병원";
+    var searchKeyword = "동물병원";
 
     // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
     var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
@@ -22,10 +22,12 @@ navigator.geolocation.getCurrentPosition((position) => {
     var ps = new kakao.maps.services.Places(map);
 
     // 키워드로 장소를 검색합니다
-    //ps.keywordSearch(searchKeyword, placesSearchCB);
+    ps.keywordSearch(searchKeyword, placesSearchCB, {
+        location: new kakao.maps.LatLng(positionArray[0], positionArray[1])
+    });
 
     // 카테고리로 은행을 검색합니다
-    ps.categorySearch('BK9', placesSearchCB, { useMapBounds: true });
+    //ps.categorySearch('BK9', placesSearchCB, { useMapBounds: true });
 
     // 키워드 검색 완료 시 호출되는 콜백함수 입니다
     function placesSearchCB(data, status, pagination) {
