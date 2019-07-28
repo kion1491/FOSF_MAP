@@ -7,14 +7,48 @@
     <title>FOSF - MAP</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Heebo|Noto+Sans+KR" rel="stylesheet">
 </head>
 
 <body>
 
     <div class="container">
-        <div class="row">
-            <div id="map" style="width:500px;height:400px;"></div>
 
+        <header class="header-area" id="header">
+            <nav class="navbar">
+                <a class="navbar-brand" id="navbarBrand">FOSF</a>
+                <div class="header_ment">
+                    <span>&nbsp;For Our Sick Family</span>
+                </div>
+            </nav>
+        </header>
+        <div class="row">
+            <div class="main_map" id="map"></div>
+        </div>
+        <div class="hosp_info_area">
+            <ul>
+                <li>
+                    <div class="hosp_info">
+                        <i class="fa fa-home"></i> <span>&nbsp;바둑이네 동물병원</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="hosp_info">
+                        <i class="fas fa-map-marker-alt"></i> <span>&nbsp;서울특별시 강남구 삼성로 614</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="hosp_info">
+                        <i class="fa fa-phone"></i> <span>&nbsp;02-111-7777</span>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 
