@@ -49,10 +49,11 @@ navigator.geolocation.getCurrentPosition((position) => {
                 lon = position.coords.longitude; // 경도
 
             var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-                message = '<div style="padding:5px;">현재위치</div>'; // 인포윈도우에 표시될 내용입니다
+                message = '<div style="padding:5px;" id="userPositionBalloon">현재위치</div>'; // 인포윈도우에 표시될 내용입니다
 
             // 마커와 인포윈도우를 표시합니다
             userMarker(locPosition, message);
+            userMarkerForm();
 
         });
 
@@ -78,6 +79,7 @@ navigator.geolocation.getCurrentPosition((position) => {
             // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
             infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
             infowindow.open(map, marker);
+
         });
     } 0
 
@@ -109,8 +111,30 @@ navigator.geolocation.getCurrentPosition((position) => {
 })
 
 
+// function userMarkerForm() {
+//     var userPositionBalloon = $("#userPositionBalloon");
+//     userPositionBalloon.parent().parent().css({
+//         'background': "red",
+//         'border': 'none',
+//         'width': '74px',
+//         'left': '147px'
+//     });
 
+//     // userPositionBalloon.parent().css({
+//     //     'margin-left': '50%'
+//     // });
+//     userPositionBalloon.parent().next('img').remove();
+//     userPositionBalloon.parent().prev('div').css({
+//         'left': '35px',
 
+//         'border': 'none'
+//     });
+//     userPositionBalloon.css({
+//         'font-weight': 'bold',
+//         'color': 'white',
+//         'text-align': 'center'
+//     });
+// }
 
 
 
